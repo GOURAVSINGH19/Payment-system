@@ -1,0 +1,12 @@
+{
+  "extends": "@repo/typescript-config/base.json", 
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/ui/*": ["../../packages/ui/*"],
+      "react": [ "./node_modules/@types/react" ]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "ui/src/button.tsz", "tailwind-config/postcss.config.js"],
+  "exclude": ["node_modules"]
+}
