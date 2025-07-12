@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^6.5.0"
+    "@prisma/client": "^6.11.1"
   },
   "devDependencies": {
-        "prisma": "6.5.0"
-    },
+    "prisma": "6.5.0"
+  },
   "exports": {
     "./client": "./index.ts"
-},
-"prisma": {
+  },
+  "prisma": {
     "seed": "ts-node prisma/seed.ts"
-}
+  }
 }
