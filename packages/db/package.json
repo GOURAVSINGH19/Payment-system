@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^6.11.1"
+    "@prisma/client": "^6.11.1",
+    "@types/node": "^22.15.3"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
     "prisma": "6.5.0"
   },
   "exports": {
-    "./client": "./index.ts"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "./client": "./src/index.ts"
   }
 }

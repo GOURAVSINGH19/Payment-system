@@ -1,9 +1,11 @@
 import "./globals.css";
+import "@repo/tailwind-config"
+import "@repo/ui/style.css"
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 import Providers from "../provider";
 import { AppbarClient } from "../components/Appbarclient";
-const geist = Geist({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Turborepo",
@@ -19,10 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <Providers>
         <AppbarClient />
-        <body className={geist.className}>
-          <main className="main">
-            {children}
-          </main>
+        <body className={inter.className}>
+          {children}
         </body>
       </Providers>
     </html>

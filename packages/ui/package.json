@@ -3,23 +3,31 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx"
+    "./style.css": "./dist/style.css",
+    "./appbar": "./src/appbar.tsx",
+    "./button": "./src/button.tsx"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
+    "build": "tailwindcss -i ./src/style.css -o ./dist/style.css",
+    "lint": "eslint src/",
+    "dev": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.30.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

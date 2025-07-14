@@ -11,8 +11,11 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@repo/db": "*",
+    "@repo/db": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.3",
+    "bcrypt": "^6.0.0",
     "esbuild": "^0.25.6",
     "express": "^5.1.0",
     "zod": "^4.0.2"
