@@ -5,7 +5,11 @@
   "exports": {
     "./style.css": "./dist/style.css",
     "./appbar": "./src/appbar.tsx",
-    "./button": "./src/button.tsx"
+    "./button": "./src/button.tsx",
+    "./Card":"./src/card.tsx",
+    "./Textinput":"./src/Textinput.tsx",
+    "./select":"./src/select.tsx",
+    "./center":"./src/center.tsx"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/style.css -o ./dist/style.css",

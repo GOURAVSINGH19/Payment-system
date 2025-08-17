@@ -21,8 +21,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
 }
-
 
 .upper_bar{
   margin-bottom: 10px;
