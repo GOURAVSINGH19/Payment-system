@@ -5,16 +5,19 @@
   "exports": {
     "./style.css": "./dist/style.css",
     "./appbar": "./src/appbar.tsx",
-    "./button": "./src/button.tsx",
-    "./Card":"./src/card.tsx",
-    "./Textinput":"./src/Textinput.tsx",
-    "./select":"./src/select.tsx",
-    "./center":"./src/center.tsx"
+    "./button": "./src/ui/button.tsx",
+    "./Card": "./src/card.tsx",
+    "./Textinput": "./src/Textinput.tsx",
+    "./select": "./src/select.tsx",
+    "./center": "./src/center.tsx",
+    "./label": "./src/ui/label.tsx",
+    "./Input": "./src/ui/input.tsx",
+    "./InputOTP": "./src/Otpinput.tsx"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/style.css -o ./dist/style.css",
     "lint": "eslint src/",
-    "dev": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "dev": "tailwindcss -i ./src/style.css -o ./dist/style.css",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
@@ -31,8 +34,15 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.31.9",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/cli": "^4.1.11",
+    "clsx": "^2.0.0",
+    "input-otp": "^1.4.2",
+    "lucide-react": "^0.541.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^2.0.0"
   }
 }

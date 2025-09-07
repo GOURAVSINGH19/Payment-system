@@ -1,11 +1,30 @@
-import "./globals.css";
 import "@repo/tailwind-config"
 import "@repo/ui/style.css"
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Providers from "../provider";
-import { AppbarClient } from "../components/Appbarclient";
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import { Playfair_Display, Source_Sans_3 } from "next/font/google"
+import Providers from "./provider";
+import { ClerkProvider } from "@clerk/nextjs"
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+  weight: ["400", "700"],
+})
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-source-sans",
+  weight: ["400", "600"],
+})
 
 export const metadata: Metadata = {
   title: "Create Turborepo",
@@ -18,13 +37,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <Providers>
-        <AppbarClient />
-        <body className={inter.className}>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <style>{`
+html {
+  font-family: ${inter.style.fontFamily};
+  --font-sans: ${inter.variable};
+  --font-mono: ${inter.variable};
+  --font-playfair: ${playfair.variable};
+  --font-source-sans: ${sourceSans.variable};
+}
+        `}</style>
+        </head>
+        <Providers />
+        <body className={`${inter.variable} ${playfair.variable} ${sourceSans.variable} text-white`}>
           {children}
         </body>
-      </Providers>
-    </html>
+      </html>
+    </ClerkProvider>
   );
 }
+
+

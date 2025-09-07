@@ -5,11 +5,11 @@ const app = express();
 
 app.post("/hdfcWebhook", async (req, res) => {
   const Validation = z.object({
-    token: z.number(),
+    token: z.string(),
     userId: z.string(),
     amount: z.number(),
   });
-  const paymentInformation = {
+  const paymentInformation: z.infer<typeof Validation> = {
     token: req.body.token,
     userId: req.body.user_identifier,
     amount: req.body.amount,
